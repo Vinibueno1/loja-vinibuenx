@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LojaVinibuenx.Models;
 
-[Table("Produtos")]
+[Table("Produto")]
 public class Produto
 {
     [Key]
@@ -32,8 +32,16 @@ public class Produto
     [Required(ErrorMessage = "Por favor, informe o valor de custo")]
     [Column(TypeName = "numeric(10,2)")]
     [Range(0, double.MaxValue)]
-    
     public decimal ValorCusto { get; set; }
+
+    [Display(Name = "Valor de Venda")]
+    [Required(ErrorMessage = "Por favor, informe o valor de venda")]
+    [Column(TypeName = "numeric(10,2)")]
+    [Range(0, double.MaxValue)]
     public decimal ValorVenda { get; set; }
-    public bool Destaque { get; set; }
+
+    public bool Destaque { get; set; } = false;
+    
+    public List<ProdutoFoto> Fotos { get; set; }
+    
 }

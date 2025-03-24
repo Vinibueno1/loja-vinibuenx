@@ -1,8 +1,8 @@
 -- Criar banco
 CREATE DATABASE viniloja;
-
+go
 use viniloja;
-
+go
 CREATE TABLE Categoria
 (
 	Id			int not null identity primary key,
